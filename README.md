@@ -26,7 +26,7 @@ Ejemplo de uso: 76561198030567998
 #### Sistema de recomendación item-item:
    - def recomendacion_juego( id de producto ): Ingresando el id de producto ('id), deberíamos recibir una lista con 5 juegos recomendados similares al ingresado.
 Ejemplo de uso : 70
-### Deployment de la API
+### 4. Deployment de la API
 Creamos una API utilizando el módulo FastAPI de Python, creando 5 funciones para que puedan ser consultadas:
 - def PlayTimeGenre( genero : str ): Debe devolver año con mas horas jugadas para dicho género. Ejemplo de input: casual , sports 
 - def UserForGenre( genero : str ): Debe devolver el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año. Ejemplo de input: action , adventure 
@@ -36,11 +36,10 @@ Creamos una API utilizando el módulo FastAPI de Python, creando 5 funciones par
 
 Luego realizamos el deployement de esta API utilizando Render.
 ## Elaces : 
-- [API]()
+- [API](https://alejo-diez-gomez-pi-ml-ops.onrender.com/)
 - [Video explicativo]()
 ## Contacto : 
-- [Portafolio Web]()
-- [Linkedin]()
-- [alejodiezgomez@gmail.com]()
+- [Portafolio Web](https://alejodiezgomez.github.io/)
+- [Linkedin](https://www.linkedin.com/in/alejo-gabriel-diez-gomez-402b93254/)
 - [alejo10gomezz@gmail.com]()
 
