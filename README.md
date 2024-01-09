@@ -35,7 +35,7 @@ Creamos una API utilizando el módulo FastAPI de Python, creando 5 funciones par
 - def sentiment_analysis( año : int ): Según el año de lanzamiento, se devuelve una lista con la cantidad de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento. Ejemplo de input: 2014
 
 Luego realizamos el deployement de esta API utilizando Render.
-## Elaces : 
+## Enlaces : 
 - [API](https://alejo-diez-gomez-pi-ml-ops.onrender.com/)
 - [Video explicativo]()
 ## Contacto : 
