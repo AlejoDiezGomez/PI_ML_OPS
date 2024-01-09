@@ -16,7 +16,7 @@ df = pd.read_csv('DataSet_Final.csv')
 
 @app.get('/')
 def message():
-    return 'PROYECTO INTEGRADOR ML OPS 01 ALEJO DIEZ GOMEZ '
+    return 'PROYECTO INTEGRADOR ML OPS 01 ALEJO DIEZ GOMEZ (agregar /docs al enlace para acceder a las funciones / add /docs to link to access features)'
 
 # Funcion que obtiene el año de lanzamiento con mas horas jugadas segun el genero / Function that obtains the year of release with the most hours played according to the genre
 
