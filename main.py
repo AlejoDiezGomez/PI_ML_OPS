@@ -102,7 +102,7 @@ cosine_similarity = linear_kernel( tdfid_matrix, tdfid_matrix)
 @app.get('/recomendacion_id/{id_producto}')
 def recomendacion(id_producto: int):
     if id_producto not in muestra['steam_id'].values:
-        return {'mensaje': 'No existe el id del juego.'}
+        return {'mensaje': 'No existe el id del usuario.'}
   
     generos = muestra.columns[2:17] 
     
