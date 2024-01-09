@@ -1,4 +1,5 @@
 # PROYECTO INDIVIDUAL 1 ML OPS
+### [English Readme](englishreadme.md)
 ## Introducción : 
 Este proyecto consiste en crear una API para Steam, construyendo un modelo de recomendacion basado en Machine Learning . Otorgando una interfaz intuitiva para el usuario donde podra consultar datos sobre generos , fechas , sentiment score ,etc. De manera puntual.
 ## Tecnologías utilizadas :
