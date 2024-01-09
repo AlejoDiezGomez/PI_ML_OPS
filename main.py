@@ -99,7 +99,7 @@ muestra=muestra.fillna("")
 tdfid_matrix = tfidf.fit_transform(muestra['review'])
 cosine_similarity = linear_kernel( tdfid_matrix, tdfid_matrix)
 
-@app.get('/recomendacion_id/{id_producto}')
+@app.get('/recomendacion_id/{id_usuario}')
 def recomendacion(id_producto: int):
     if id_producto not in muestra['steam_id'].values:
         return {'mensaje': 'No existe el id del usuario.'}
