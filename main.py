@@ -58,7 +58,7 @@ def UsersRecommend(year: int) -> dict:
     }
     return resultado
 
-# Funcion que devuelve top 3 juegos no recomendados por usuarios segun el año y el sentiment score / Funcion que devuelve top 3 juegos no recomendados por usuarios segun el año y el sentiment score
+# Funcion que devuelve top 3 desarrolladoras no recomendados por usuarios segun el año y el sentiment score / Funcion que devuelve top 3 juegos no recomendados por usuarios segun el año y el sentiment score
 
 @app.get('/UsersWorstDeveloper/')
 def UsersRecommend(year: int) -> dict:
@@ -74,7 +74,7 @@ def UsersRecommend(year: int) -> dict:
     }
     return resultado
 
-# Funcion que devuelve el sentiment score segun el año / Function that returns the sentiment score according to the year
+# Funcion que devuelve el sentiment score segun el desarrollador / Function that returns the sentiment score according to the publisher
 
 @app.get('/sentiment_analysis/')
 def sentiment_analysis(publisher : str) -> dict:
