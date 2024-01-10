@@ -38,7 +38,7 @@ Creamos una API utilizando el módulo FastAPI de Python, creando 5 funciones par
 Luego realizamos el deployement de esta API utilizando Render.
 ## Enlaces : 
 - [API](https://alejo-diez-gomez-pi-ml-ops.onrender.com/)
-- [Video explicativo]()
+- [Video explicativo](https://www.youtube.com/watch?v=jCIwM6Hw-_U)
 ## Contacto : 
 - [Portafolio Web](https://alejodiezgomez.github.io/)
 - [Linkedin](https://www.linkedin.com/in/alejo-gabriel-diez-gomez-402b93254/)
