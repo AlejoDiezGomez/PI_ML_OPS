@@ -63,16 +63,31 @@ def UsersRecommend(year: int) -> dict:
 @app.get('/UsersWorstDeveloper/')
 def UsersRecommend(year: int) -> dict:
     df_filtrado = df[(df['year'] == year) & (df['recommend'] == False) & (df['sentiment_score'] == 0 )]
+    
     if df_filtrado.empty:
-        return {"error": 'Valor no encontrado'}
+        return {"error": f"No hay datos para el año {year} con los criterios dados."}
+    
+    # Eliminar duplicados en la columna 'publisher' para evitar repeticiones en distintos puestos
+    df_filtrado = df_filtrado.drop_duplicates(subset='publisher')
+    
+    if df_filtrado.empty:
+        return {"error": f"No hay datos únicos para el año {year} con los criterios dados."}
+    
+    # Ordenar el DataFrame por 'sentiment_score' en orden descendente
     df_ordenado = df_filtrado.sort_values(by='sentiment_score', ascending=False)
+    
+    # Tomar los primeros 3 editores únicos
     top_3_reseñas = df_ordenado.head(3)
+    
+    # Crear el resultado
     resultado = {
         "Puesto 1": top_3_reseñas.iloc[0]['publisher'],
         "Puesto 2": top_3_reseñas.iloc[1]['publisher'],
         "Puesto 3": top_3_reseñas.iloc[2]['publisher']
     }
+    
     return resultado
+
 
 # Funcion que devuelve el sentiment score segun el desarrollador / Function that returns the sentiment score according to the publisher
 
