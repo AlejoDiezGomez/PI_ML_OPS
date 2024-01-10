@@ -67,9 +67,6 @@ def UsersRecommend(year: int) -> dict:
     if df_filtrado.empty:
         return {"error": f"No hay datos para el año {year} con los criterios dados."}
     
-    # Eliminar duplicados en la columna 'publisher' para evitar repeticiones en distintos puestos
-    df_filtrado = df_filtrado.drop_duplicates(subset='publisher')
-    
     if df_filtrado.empty:
         return {"error": f"No hay datos únicos para el año {year} con los criterios dados."}
     
