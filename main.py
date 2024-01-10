@@ -46,7 +46,7 @@ def UserForGenre(genre: str) -> dict:
 
 @app.get('/UsersRecommend/')
 def UsersRecommend(year: int) -> dict:
-    df_filtrado = df[(df['year'] == year) & (df['recommend'] == True) & (df['sentiment_score'] == 2)]
+    df_filtrado = df[(df['year'] == year) & (df['recommend'] == True) & (df['sentiment_score'] >= 1)]
     if df_filtrado.empty:
         return {"error": 'Valor no encontrado'}
     df_ordenado = df_filtrado.sort_values(by='sentiment_score', ascending=False)
@@ -60,30 +60,30 @@ def UsersRecommend(year: int) -> dict:
 
 # Funcion que devuelve top 3 juegos no recomendados por usuarios segun el año y el sentiment score / Funcion que devuelve top 3 juegos no recomendados por usuarios segun el año y el sentiment score
 
-@app.get('/UsersNotRecommed/')
+@app.get('/UsersWorstDeveloper/')
 def UsersRecommend(year: int) -> dict:
-    df_filtrado = df[(df['year'] == year) & (df['recommend'] == False) & (df['sentiment_score'] <= 1)]
+    df_filtrado = df[(df['year'] == year) & (df['recommend'] == False) & (df['sentiment_score'] == 0 )]
     if df_filtrado.empty:
         return {"error": 'Valor no encontrado'}
     df_ordenado = df_filtrado.sort_values(by='sentiment_score', ascending=False)
     top_3_reseñas = df_ordenado.head(3)
     resultado = {
-        "Puesto 1": top_3_reseñas.iloc[0]['title'],
-        "Puesto 2": top_3_reseñas.iloc[1]['title'],
-        "Puesto 3": top_3_reseñas.iloc[2]['title']
+        "Puesto 1": top_3_reseñas.iloc[0]['publisher'],
+        "Puesto 2": top_3_reseñas.iloc[1]['publisher'],
+        "Puesto 3": top_3_reseñas.iloc[2]['publisher']
     }
     return resultado
 
 # Funcion que devuelve el sentiment score segun el año / Function that returns the sentiment score according to the year
 
 @app.get('/sentiment_analysis/')
-def sentiment_analysis(year: int) -> dict:
-    filtered_df = df[df['year'] == year]
+def sentiment_analysis(publisher : str) -> dict:
+    filtered_df = df[df['publisher'] == publisher]
     sentiment_counts = filtered_df['sentiment_score'].value_counts()
     result = {
-        "Positive": int(sentiment_counts.get(0, 0)),
+        "Positive": int(sentiment_counts.get(2, 0)),
         "Neutral": int(sentiment_counts.get(1, 0)),
-        "Negative": int(sentiment_counts.get(2, 0))
+        "Negative": int(sentiment_counts.get(0, 0))
     }
     return result
 
