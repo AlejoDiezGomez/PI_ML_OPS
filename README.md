@@ -32,13 +32,13 @@ Creamos una API utilizando el módulo FastAPI de Python, creando 5 funciones par
 - def PlayTimeGenre( genero : str ): Debe devolver año con mas horas jugadas para dicho género. Ejemplo de input: casual , sports 
 - def UserForGenre( genero : str ): Debe devolver el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año. Ejemplo de input: action , adventure 
 - def UsersRecommend( año : int ): Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado. (reviews.recommend = True y comentarios positivos/neutrales) Ejemplo de input: 2012 , 2015 
-- def UsersNotRecommend( año : int ): Devuelve el top 3 de juegos MENOS recomendados por usuarios para el año dado. (reviews.recommend = False y comentarios negativos) Ejemplo de input: 2009 , 2012
-- def sentiment_analysis( año : int ): Según el año de lanzamiento, se devuelve una lista con la cantidad de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento. Ejemplo de input: 2014
+- def UsersWorstDeveloper( año : int ): Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado: 2009 , 2012
+- def sentiment_analysis( empresa desarrolladora : str ): Según la empresa desarrolladora, se devuelve un diccionario con el nombre de la desarrolladora como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor. Ejemplo de input: valve
 
 Luego realizamos el deployement de esta API utilizando Render.
 ## Enlaces : 
 - [API](https://alejo-diez-gomez-pi-ml-ops.onrender.com/)
-- [Video explicativo](https://youtu.be/GTkfeYYUafY)
+- [Video explicativo]()
 ## Contacto : 
 - [Portafolio Web](https://alejodiezgomez.github.io/)
 - [Linkedin](https://www.linkedin.com/in/alejo-gabriel-diez-gomez-402b93254/)
