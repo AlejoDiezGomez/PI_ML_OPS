@@ -61,28 +61,17 @@ def UsersRecommend(year: int) -> dict:
 # Funcion que devuelve top 3 desarrolladoras no recomendados por usuarios segun el año y el sentiment score / Funcion que devuelve top 3 juegos no recomendados por usuarios segun el año y el sentiment score
 
 @app.get('/UsersWorstDeveloper/')
-def UsersRecommend(year: int) -> dict:
+def UsersWorstDeveloper(year: int) -> dict:
     df_filtrado = df[(df['year'] == year) & (df['recommend'] == False) & (df['sentiment_score'] == 0 )]
-    
     if df_filtrado.empty:
-        return {"error": f"No hay datos para el año {year} con los criterios dados."}
-    
-    if df_filtrado.empty:
-        return {"error": f"No hay datos únicos para el año {year} con los criterios dados."}
-    
-    # Ordenar el DataFrame por 'sentiment_score' en orden descendente
+        return {"error": 'Valor no encontrado'}
     df_ordenado = df_filtrado.sort_values(by='sentiment_score', ascending=False)
-    
-    # Tomar los primeros 3 editores únicos
     top_3_reseñas = df_ordenado.head(3)
-    
-    # Crear el resultado
     resultado = {
         "Puesto 1": top_3_reseñas.iloc[0]['publisher'],
         "Puesto 2": top_3_reseñas.iloc[1]['publisher'],
         "Puesto 3": top_3_reseñas.iloc[2]['publisher']
     }
-    
     return resultado
 
 
