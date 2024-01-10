@@ -1,8 +1,9 @@
 # INDIVIDUAL PROJECT 1 ML OPS
+### [English Readme](englishreadme.md)
 ## Introduction:
-This project involves creating an API for Steam, building a recommendation model based on Machine Learning. Providing an intuitive interface for the user where they can query data about genres, dates, sentiment scores, etc. In a timely manner.
+This project involves creating an API for Steam, building a recommendation model based on Machine Learning. Providing an intuitive interface for the user to query data about genres, dates, sentiment scores, etc. Specifically.
 
-## Technologies Used:
+## Technologies used:
 - FastAPI
 - Matplotlib
 - NLTK
@@ -17,35 +18,42 @@ This project involves creating an API for Steam, building a recommendation model
 
 ## Resolution:
 ### 1. [ETL:](ETL.ipynb)
-Performed the ETL (extraction, transformation, and loading) process with files obtained from various sources for subsequent analysis and use within the ML model.
+I performed the ETL (extraction, transformation, and loading) process with files obtained from various sources for subsequent analysis and utilization within the ML model.
 
 ### 2. [EDA:](EDA.ipynb)
-Conducted Exploratory Data Analysis (EDA) on the DataSet obtained in the ETL with the aim of identifying relationships, insights, trends, and/or patterns that serve the creation and execution of the ML model.
+I carried out the Exploratory Data Analysis (EDA) process on the dataset obtained in the ETL to identify relationships, insights, trends, and/or patterns that serve for the creation and execution of the ML model.
 
 ### 3. Machine Learning Model:
 This Machine Learning model provides accurate and personalized game recommendations for each user using algorithms and techniques such as cosine similarity and scikit-learn.
 
-#### Item-Item Recommendation System:
-- `def game_recommendation(product_id)`: By entering the product id ('id'), we should receive a list of 5 games recommended similar to the input. Example of usage: `70`
+#### User-item recommendation system:
+- def user_recommendation(user_id): By entering a user's ID ('user_id'), we should receive a list of 5 recommended games for that user.
+Example of use: 76561198030567998, 76561198066011588
 
-#### User-Item Recommendation System:
-- `def user_recommendation(user_id)`: By entering the user id ('user_id'), we should receive a list of 5 games recommended for that user. Example of usage: `76561198030567998`
+#### Item-item recommendation system:
+- def game_recommendation(product_id): By entering a product ID ('id'), we should receive a list of 5 games recommended similar to the one entered.
+Example of use: 70, 1520
 
-### API Deployment:
+### 4. API Deployment:
 We created an API using the FastAPI module in Python, creating 5 functions that can be queried:
-- `def PlayTimeGenre(genre: str)`: Should return the year with the most played hours for that genre. Example input: `casual`, `sports`
-- `def UserForGenre(genre: str)`: Should return the user with the most accumulated playtime for the given genre and a list of accumulated playtime per year. Example input: `action`, `adventure`
-- `def UsersRecommend(year: int)`: Returns the top 3 games MOST recommended by users for the given year. (reviews.recommend = True and positive/neutral comments) Example input: `2012`, `2015`
-- `def UsersNotRecommend(year: int)`: Returns the top 3 games LEAST recommended by users for the given year. (reviews.recommend = False and negative comments) Example input: `2009`, `2012`
-- `def sentiment_analysis(year: int)`: Based on the release year, returns a list with the number of user review records categorized with sentiment analysis. Example input: `2014`
+
+- def PlayTimeGenre(genre: str): It should return the year with the most played hours for the given genre. Example input: casual, sports
+
+- def UserForGenre(genre: str): It should return the user with the most accumulated hours played for the given genre and a list of the accumulation of hours played per year. Example input: action, adventure
+
+- def UsersRecommend(year: int): It returns the top 3 games MOST recommended by users for the given year. (reviews.recommend = True and positive/neutral comments) Example input: 2012, 2015
+
+- def UsersWorstDeveloper(year: int): It returns the top 3 developers with the LEAST recommended games by users for the given year: 2009, 2012
+
+- def sentiment_analysis(developer_company: str): According to the developer company, it returns a dictionary with the name of the developer as the key and a list with the total quantity of user review records categorized with sentiment analysis as the value. Example input: valve
 
 Then we deployed this API using Render.
 
 ## Links:
-- [API]()
-- [Explanatory Video]()
+- [API](https://alejo-diez-gomez-pi-ml-ops.onrender.com/)
+- [Explainer Video]()
 
 ## Contact:
-- [Web Portfolio]()
-- [Linkedin]()
+- [Web Portfolio](https://alejodiezgomez.github.io/)
+- [Linkedin](https://www.linkedin.com/in/alejo-gabriel-diez-gomez-402b93254/)
 - [alejo10gomezz@gmail.com]()
